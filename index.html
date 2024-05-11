@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -91,16 +91,16 @@
           <h1 class="title is-1 publication-title">Enhancing Sample Efficiency and Exploration via Anchor-Based Reinforcement Learning</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="yamenhabib.com">Yamen Habib</a></span> 
+              <!-- <a href="">Anonymous Author</a></span>  -->
+              Anonymous Author
           </div>
 
-          <div class="is-size-5 publication-authors">
+          <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">UPF</span>
-          </div>
+          </div> -->
 
-          <div class="column has-text-centered">
+          <!-- <div class="column has-text-centered"> 
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
@@ -119,7 +119,6 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
               <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
@@ -129,7 +128,7 @@
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Code Link. -->
+              
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
                    class="external-link button is-normal is-rounded is-dark">
@@ -139,7 +138,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
               <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
@@ -149,8 +147,8 @@
                   <span>Data</span>
                   </a>
             </div>
+          </div> -->
 
-          </div>
         </div>
       </div>
     </div>
@@ -276,8 +274,7 @@
     <div class="is-centered">
       <h2 class="title is-3">Visual Effects</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            An <i>Anchor Policy</i> is a stable or separately learned policy with predefined objectives that serves as a 'reference' during the training of a target policy -- the target policy is designed to solve the Markov Decision Process (MDP) by maximizing the expected reward alone. By leveraging an anchor policy, the training process can be guided by smartly-engineered understanding of the environment. This not only bridges the exploration-exploitation dilemma but also ensures that the learning trajectory of the target policy remains bounded by certain desirable characteristics of the anchor.  In this study, we explore the complexities of employing an anchor policy as a reference for training. We explore its advantages, its implementation nuances, and demonstrate how it can significantly enhance the performance and robustness of the resulting target policy. One pivotal advantage, which we emphasize, is the potential for increased sample efficiency. By utilizing insights from the anchor policy, our method reduces the need for redundant exploration, thereby making better use of available data and speeding up the learning process. By anchoring our learning process to a reliable reference, we hope to establish a novel paradigm in RL that not only accelerates convergence but also promotes the discovery of more optimal, stable, and sample-efficient policies.
           </p>
           <div class="col-md-12">
               <p>
@@ -289,6 +286,26 @@
   </div>
 </section>
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="is-centered">
+      <h2 class="title is-3">Anchor Lap</h2>
+          <p>
+          <strong>Anchor Lap</strong> uses a Laplacian operator derived from the policy's state transition distribution, enabling a graph-based representation of the environment. 
+          This method applies stochastic optimization to derive the smallest eigen-functions of the Laplacian, effectively representing the environment. 
+          To ensure proper alignment of the eigen-functions, the method incorporates a soft constraint for ortho-normality during stochastic optimization. 
+          The optimization process samples transitions and pairs of states, employing stochastic gradient descent to learn the eigen-functions.
+          </p>  
+    </div>
+    <div class="is-centered">
+      <p>
+          <img src="static/images/ants3_crop.jpg" style="width: 100%;">
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- 
 <section class="section" id="BibTeX">
