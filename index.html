@@ -39,6 +39,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -50,37 +51,9 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  
 </nav>
+
 
 
 <section class="hero">
@@ -154,78 +127,6 @@
     </div>
   </div>
 </section>
-<!-- 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video> 
-      <h2 class="subtitle has-text-centered">
-        Enhancing Sample Efficiency and Exploration via Anchor-Based Reinforcement Learning
-      </h2>
-    </div>
-  </div>
-</section>  -->
-
-<!-- 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -238,8 +139,6 @@
           <p>
             In reinforcement learning, balancing exploration and exploitation is crucial to achieving optimal results. 
             Traditional methods use regularizers to prevent the policy from becoming deterministic too early like penalizing deviations from a predefined reference policy. 
-            
-            
           </p>
           <p>
             This paper explores a novel approach where a reference policy, termed "anchor policy," is trained alongside the main policy to guide exploration. 
@@ -252,60 +151,125 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+  </div>
+</section>
 
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<section class="section">
+  <div class="container ">
+
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Soft Actor Critic</h2>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/video_sac.mp4"
+                    type="video/mp4">
+          </video>
         </div>
       </div>
-    </div> -->
-    <!--/ Paper video. -->
-  </div>
-</section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="is-centered">
-      <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            An <i>Anchor Policy</i> is a stable or separately learned policy with predefined objectives that serves as a 'reference' during the training of a target policy -- the target policy is designed to solve the Markov Decision Process (MDP) by maximizing the expected reward alone. By leveraging an anchor policy, the training process can be guided by smartly-engineered understanding of the environment. This not only bridges the exploration-exploitation dilemma but also ensures that the learning trajectory of the target policy remains bounded by certain desirable characteristics of the anchor.  In this study, we explore the complexities of employing an anchor policy as a reference for training. We explore its advantages, its implementation nuances, and demonstrate how it can significantly enhance the performance and robustness of the resulting target policy. One pivotal advantage, which we emphasize, is the potential for increased sample efficiency. By utilizing insights from the anchor policy, our method reduces the need for redundant exploration, thereby making better use of available data and speeding up the learning process. By anchoring our learning process to a reliable reference, we hope to establish a novel paradigm in RL that not only accelerates convergence but also promotes the discovery of more optimal, stable, and sample-efficient policies.
-          </p>
-          <div class="col-md-12">
-              <p>
-                  <img src="static/images/comparison_ant_diagram.jpg" style="width: 100%;">
-              </p>
+      <div class="column">
+        <h2 class="title is-3">Dynamic Reference MOP</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <!-- <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p> -->
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/video_mop.mp4"
+                      type="video/mp4">
+            </video>
           </div>
-          
+
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-3">Dynamic Reference Lap</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/video_lap.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <!--/ Matting. -->
   </div>
 </section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="is-centered">
-      <h2 class="title is-3">Anchor Lap</h2>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-justified">
+          <h2 class="title is-3 has-text-centered">Visual Effects</h2>
+          <img src="static/images/comparison_ant_diagram.jpg">
+        </div>
+        <div class="content has-text-justified">
           <p>
-          <strong>Anchor Lap</strong> uses a Laplacian operator derived from the policy's state transition distribution, enabling a graph-based representation of the environment. 
-          This method applies stochastic optimization to derive the smallest eigen-functions of the Laplacian, effectively representing the environment. 
-          To ensure proper alignment of the eigen-functions, the method incorporates a soft constraint for ortho-normality during stochastic optimization. 
-          The optimization process samples transitions and pairs of states, employing stochastic gradient descent to learn the eigen-functions.
-          </p>  
+            1. <strong>Uniform Anchor</strong>: Demonstrates indiscriminate exploration with no strategic guidance, leading to inefficient learning paths.
+          </p>
+
+          <p>
+            2. <strong>Fixed Pretrained Anchor</strong>: Shows initial efficient guidance that becomes ineffective after environmental changes, as the fixed path does not adapt to new conditions.
+          </p>
+
+          <p>
+            3. <strong>Adaptive Anchor</strong> Illustrates dynamic adjustment to guidance paths in response to environmental changes, maintaining relevant and efficient exploration throughout the learning process.
+          </p>
+          <p>
+            An <i>Anchor Policy</i> is a stable or separately learned policy with predefined objectives that serves as a 'reference' during the training of a target policy -- the target policy is designed to solve the Markov Decision Process (MDP) by maximizing the expected reward alone.
+            By leveraging an anchor policy, the training process can be guided by smartly-engineered understanding of the environment.  
+            This not only bridges the exploration-exploitation dilemma but also ensures that the learning trajectory of the target policy remains bounded by certain desirable characteristics of the anchor.  
+          </p>
+
+        </div>
+      </div>
     </div>
-    <div class="is-centered">
-      <p>
-          <img src="static/images/ants3_crop.jpg" style="width: 100%;">
-      </p>
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-justified">
+          <h2 class="title is-3 has-text-centered">Visual Effects</h2>
+          <div class="content has-text-centered"">
+            <img src="static/images/ants3_crop.jpg" style="width: 75%;">
+          </div>
+          <p>
+            <strong>Anchor Lap</strong> uses a Laplacian operator derived from the policy's state transition distribution, enabling a graph-based representation of the environment. 
+            This method applies stochastic optimization to derive the smallest eigen-functions of the Laplacian, effectively representing the environment. 
+            To ensure proper alignment of the eigen-functions, the method incorporates a soft constraint for ortho-normality during stochastic optimization. 
+            The optimization process samples transitions and pairs of states, employing stochastic gradient descent to learn the eigen-functions.
+          </p> 
+          <h4 class="text-center desktop-only">
+              $$
+              \begin{equation}
+                  R(s_{t}, a_{t}) = \frac{||\phi(s_{t+1})-\phi(s_{t+1})||_{2}^2}{||\phi(s_{t+1})||_{2}^2 + ||\phi(s_{t})||_{2}^2}
+              \end{equation}
+              $$
+          </h4> 
+        </div>
+      </div>
     </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-justified">
+          <h2 class="title is-3 has-text-centered">Visual Effects</h2>
+          
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- 
 <section class="section" id="BibTeX">
@@ -334,18 +298,9 @@
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a> and <a href="https://jonbarron.info/">Jon Barron</a>.
           </p>
         </div>
       </div>
