@@ -59,7 +59,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Enhancing Exploration via Off-Reward Dynamic Reference Reinforcement Learning</h1>
+          <h1 class="title is-1 publication-title">Unsupervised Action-Policy Quantization via Maximum Entropy Mixture Policies with Minimum Entropy Components</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <!-- <a href="">Anonymous Author</a></span>  -->
@@ -135,16 +135,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In reinforcement learning (RL), balancing exploration and exploitation is essential for maximizing a target reward function. 
-            Traditional methods often employ regularizers to prevent the policy from becoming deterministic too early, such as penalizing deviations from a reference policy. 
-            This paper introduces a novel approach by training an off-reward dynamic reference policy (ORDRP) with a different reward function alongside the target policy to guide exploration.</p>
-          <p>
-            We use Kullback–Leibler divergence as a regularization technique and train the ORDRP either with the maximum occupancy principle or Laplacian intrinsic off-rewards. 
-          </p>
-          <p>
-            We prove the convergence of the ORDRP iteration method and validate our theory within an actor-critic framework. 
-            Our experiments in challenging environments reveal that incorporating an ORDRP enhances exploration, resulting in superior performance and higher sampling efficiency in benchmarks compared to state of the art baselines.
-            Our findings suggest that dynamically training a reference policy with an off-reward function alongside the main policy can significantly improve learning outcomes.
+            We introduce an online unsupervised reinforcement learning (RL) framework that autonomously quantizes the agent’s action space into component policies via a joint entropy objective—maximizing the cumulative entropy of an overall mixture policy to ensure diverse, exploratory behavior under the maximum-occupancy principle, while minimizing the entropy of each component to enforce diversity and high specialization. 
+            Unlike existing approaches, our framework tackles action quantization into component policies in a fully principled, unsupervised, online manner. 
+            We prove convergence in the tabular setting through a novel policy-iteration algorithm, then extend to continuous control by fixing the discovered components and deploying them deterministically within an online optimizer to maximize cumulative reward. 
+            Empirical results demonstrate that our {\em maxi-mix-mini-com} entropy-based action-policy quantization provides interpretable, reusable token-like behavioral patterns, yielding a fully online, task-agnostic, scalable architecture that requires no task-specific offline data and transfers readily across tasks.
           </p>
         </div>
       </div>
