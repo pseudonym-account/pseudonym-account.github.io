@@ -146,7 +146,7 @@
   </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
@@ -179,7 +179,7 @@
   </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
@@ -256,67 +256,183 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section id="videos" class="section">
   <div class="container ">
-    <h2 class="title is-3 has-text-centered">Solving Escape Room</h2>
+    <h2 class="title is-3 has-text-centered">Ant-v5 Agent Dynamics Under Uniform Component Sampling</h2>
     
     <div class="columns is-centered">
 
       <div class="column">
         <div class="content">
-          <h4 class="title is-4">Soft Actor Critic</h4>
+          <h4 class="title is-4 "> \(\sigma = 0\) (Deterministic) </h4>
           <video id="video_sac" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/video_sac.mp4"
+            <source src="./static/videos/ant_generate_video_uniform_com_std_0_0_a_0_1.mp4"
                     type="video/mp4">
           </video>
-          <p>
+          <!-- <p>
             Incorporates entropy regularization into its objective function to balance exploration and exploitation. 
-          </p>
+          </p> -->
         </div>
       </div>
 
       <div class="column">
-        <h4 class="title is-4">MOP Reference</h4>
+        <h4 class="title is-4">\(\sigma = 0.1\)</h4>
         <div class="columns is-centered">
           <div class="column content">
             <video id="video_mop" controls playsinline height="100%">
-              <source src="./static/videos/video_mop.mp4"
+              <source src="./static/videos/ant_generate_video_uniform_com_std_0_1_a_0_1.mp4"
                       type="video/mp4">
             </video>
-            <p>
+            <!-- <p>
               Maximizes the occupancy of action-state space by maximizing cumulative action entropy
-            </p> 
+            </p>  -->
           </div>
 
         </div>
       </div>
 
       <div class="column">
-        <h4 class="title is-4">Lap Reference</h4>
+        <h4 class="title is-4">\(\sigma = 0.2\)</h4>
         <div class="columns is-centered">
           <div class="column content">
             <video id="video_lap" controls playsinline height="100%">
-              <source src="./static/videos/video_lap.mp4"
+              <source src="./static/videos/ant_generate_video_uniform_com_std_0_2_a_0_1.mp4"
                       type="video/mp4">
             </video>
-            <p>
+            <!-- <p>
               Leverages spectral information from the Laplacian of the transition matrix to guide exploration by encouraging the agent to visit spectrally distinct states.
-            </p>
+            </p> -->
           </div>
 
         </div>
       </div>
     </div>
+  </div>
+</section> 
+
+
+
+<section id="videos" class="section">
+  <div class="container ">
+    <h2 class="title is-3 has-text-centered">Ant-v5 Agent Dynamics Using Fixed Component</h2>
     
-    <div class="content has-text-centered"">
-      <img src="static/images/escape_room_done.jpg" style="width: 75%;">
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h4 class="title is-4 "> \(\sigma = 0\) (Deterministic) </h4>
+          <video id="video_sac" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/grid_video_white_det_alpha_0_1.mp4"
+                    type="video/mp4">
+          </video>
+          <!-- <p>
+            Incorporates entropy regularization into its objective function to balance exploration and exploitation. 
+          </p> -->
+        </div>
+      </div>
+
+      <div class="column">
+        <h4 class="title is-4">\(\sigma = 0.1\)</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="video_mop" controls playsinline height="100%">
+              <source src="./static/videos/grid_video_white_std_0_1_alpha_0_1.mp4"
+                      type="video/mp4">
+            </video>
+            <!-- <p>
+              Maximizes the occupancy of action-state space by maximizing cumulative action entropy
+            </p>  -->
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</section> 
 
-<section class="section">
+<section id="videos" class="section">
+  <div class="container ">
+    <h2 class="title is-3 has-text-centered">Swimmer-v5 Agent Dynamics Using Fixed Component</h2>
+    
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h4 class="title is-4 "> \(\sigma = 0\) (Deterministic) </h4>
+          <video id="video_sac" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/swimmer_std_0_0.mp4"
+                    type="video/mp4">
+          </video>
+          <!-- <p>
+            Incorporates entropy regularization into its objective function to balance exploration and exploitation. 
+          </p> -->
+        </div>
+      </div>
+
+      <div class="column">
+        <h4 class="title is-4">\(\sigma = 0.1\)</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="video_mop" controls playsinline height="100%">
+              <source src="./static/videos/Swimmer_std_0_1.mp4"
+                      type="video/mp4">
+            </video>
+            <!-- <p>
+              Maximizes the occupancy of action-state space by maximizing cumulative action entropy
+            </p>  -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
+<section id="videos" class="section">
+  <div class="container ">
+    <h2 class="title is-3 has-text-centered">Fetch Robot Agent Dynamics Using Fixed Component</h2>
+    
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h4 class="title is-4 "> \(\sigma = 0\) (Deterministic) </h4>
+          <video id="video_sac" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fetchreach_std_0_0.mp4"
+                    type="video/mp4">
+          </video>
+          <!-- <p>
+            Incorporates entropy regularization into its objective function to balance exploration and exploitation. 
+          </p> -->
+        </div>
+      </div>
+
+      <div class="column">
+        <h4 class="title is-4">\(\sigma = 0.1\)</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="video_mop" controls playsinline height="100%">
+              <source src="./static/videos/fetchreach_std_0.1.mp4"
+                      type="video/mp4">
+            </video>
+            <!-- <p>
+              Maximizes the occupancy of action-state space by maximizing cumulative action entropy
+            </p>  -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
+
+
+<!-- <section class="section">
   <div class="container ">
     <h2 class="title is-3 has-text-centered">Mujoco Benchmark</h2>
     
@@ -439,9 +555,9 @@
 
     </div>
   </div>
-</section>
+</section>  -->
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
@@ -471,7 +587,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <!-- 
