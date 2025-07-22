@@ -313,6 +313,45 @@
 </section> 
  -->
 
+<section id="videos_ant_det_vs_stoc" class="section">
+  <div class="container ">
+    <h2 class="title is-3 has-text-centered">Behavior under maxi-mix-mini-com</h2>
+    
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4 has-text-centered"> \(k \sim w(s)\) </h2>
+          <h2 class="title is-4 has-text-centered"> (Stochastic) </h2>
+          <video id="video_sac" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ant_agent_video_f20250723_002513_compressed.mp4"
+                    type="video/mp4">
+          </video>
+          <!-- <p>
+            Incorporates entropy regularization into its objective function to balance exploration and exploitation. 
+          </p> -->
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-4 has-text-centered"> \(k \sim Uniform \{0, ..., K\}, \quad \sigma_k = 0\)</h2>
+        <h2 class="title is-4 has-text-centered"> (Deterministic)</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="video_mop" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/ant_agent_video_uniform_random_component_20250723_004920_compressed.mp4"
+                      type="video/mp4">
+            </video>
+            <!-- <p>
+              Maximizes the occupancy of action-state space by maximizing cumulative action entropy
+            </p>  -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
 
 <section id="videos_ant" class="section">
   <div class="container ">
