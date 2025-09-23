@@ -180,9 +180,107 @@
   </div>
 </section>
 
+<!-- Videos 1 -->
+<section id="videos_swimmer_fixed_component" class="section">
+    <div class="container ">
+      <h2 class="title is-3 has-text-centered">Videos 1: Swimmer-v5 Agent Dynamics Using A Fixed Component</h2>
+      <p>
+        This section evaluates the behavior of the Swimmer-v5 agent when consistently utilizing a single, fixed component policy \(\pi_k\) from the learned mixture policy.
+        By isolating and deploying one component at a time, we can observe the distinct behaviors and strategies that each component has specialized in during training.
+        This analysis provides insights into how different components contribute to the overall performance and adaptability of the agent in navigating its environment.
+      </p>
+      <br>
+      <br>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <h4 class="title is-4 has-text-centered"> \( a = \mu_k \) </h4>
+            <p style="text-align: justify;">
+              The agent consistently uses the mode (most probable action) of a selected component policy \(\pi_k\) at each time step, resulting in deterministic behavior.
+            </p>
+            <video id="video_swimmer_det" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/swimmer_std_0_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <h4 class="title is-4 has-text-centered">\( a \sim \pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\)</h4>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p style="text-align: justify;">
+                The agent samples actions from the component policy \(\pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\), where the diagonal elements of the covariance matrix \(\Sigma_k(s)\) are limited from above by \(0.1\).
+              </p>
+              <video id="video_swimmer_stoc" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/Swimmer_std_0_1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Videos 2 -->
+<section id="videos_ant" class="section">
+  <div class="container ">
+    <h2 class="title is-3 has-text-centered">Videos 2: Ant-v5 Agent Dynamics Using A Fixed Component</h2>
+    <p>
+      This section evaluates the behavior of the Ant-v5 agent when consistently utilizing a single, fixed component policy \(\pi_k\) from the learned mixture policy. 
+      By isolating and deploying one component at a time, we can observe the distinct behaviors and strategies that each component has specialized in during training. 
+      This analysis provides insights into how different components contribute to the overall performance and adaptability of the agent in navigating its environment.
+    </p>
+    <br>
+    <br>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h4 class="title is-4  has-text-centered"> \( a = \mu_k \) </h4>
+          <p style="text-align: justify;">
+            The agent consistently uses the mode (most probable action) of a selected component policy \(\pi_k\) at each time step, resulting in deterministic behavior.
+          </p>
+
+          <video id="video_sac" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/grid_video_white_det_alpha_0_1.mp4"
+                    type="video/mp4">
+          </video>
+          <!-- <p>
+            Incorporates entropy regularization into its objective function to balance exploration and exploitation. 
+          </p> -->
+        </div>
+      </div>
+
+      <div class="column">
+        <h4 class="title is-4  has-text-centered">\( a \sim \pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\)</h4>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p style="text-align: justify;">
+              The agent samples actions from the component policy \(\pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\), where the diagonal elements of the covariance matrix \(\Sigma_k(s)\) are limited from above by \(0.1\).
+            </p>
+            <video id="video_mop" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/grid_video_white_std_0_1_alpha_0_1.mp4"
+                      type="video/mp4">
+            </video>
+            <!-- <p>
+              Maximizes the occupancy of action-state space by maximizing cumulative action entropy
+            </p>  -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
+<!-- Videos 3 -->
 <section id="videos_ant_det_vs_stoc" class="section">
   <div class="container ">
-    <h2 class="title is-3 has-text-centered">Behavior under maxi-mix-mini-com</h2>
+    <h2 class="title is-3 has-text-centered">Videos 3: Behavior under maxi-mix-mini-com</h2>
     
     <div class="columns is-centered">
 
@@ -231,149 +329,11 @@
   </div>
 </section> 
 
-<section id="videos_ant" class="section">
-  <div class="container ">
-    <h2 class="title is-3 has-text-centered">Ant-v5 Agent Dynamics Using A Fixed Component</h2>
-    <p>
-      This section evaluates the behavior of the Ant-v5 agent when consistently utilizing a single, fixed component policy \(\pi_k\) from the learned mixture policy. 
-      By isolating and deploying one component at a time, we can observe the distinct behaviors and strategies that each component has specialized in during training. 
-      This analysis provides insights into how different components contribute to the overall performance and adaptability of the agent in navigating its environment.
-    </p>
-    <br>
-    <br>
-    <div class="columns is-centered">
-
-      <div class="column">
-        <div class="content">
-          <h4 class="title is-4  has-text-centered"> \( a = \mu_k \) </h4>
-          <p style="text-align: justify;">
-            The agent consistently uses the mode (most probable action) of a selected component policy \(\pi_k\) at each time step, resulting in deterministic behavior.
-          </p>
-
-          <video id="video_sac" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/grid_video_white_det_alpha_0_1.mp4"
-                    type="video/mp4">
-          </video>
-          <!-- <p>
-            Incorporates entropy regularization into its objective function to balance exploration and exploitation. 
-          </p> -->
-        </div>
-      </div>
-
-      <div class="column">
-        <h4 class="title is-4  has-text-centered">\( a \sim \pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\)</h4>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p style="text-align: justify;">
-              The agent samples actions from the component policy \(\pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\), where the diagonal elements of the covariance matrix \(\Sigma_k(s)\) are limited from above by \(0.1\).
-            </p>
-            <video id="video_mop" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/grid_video_white_std_0_1_alpha_0_1.mp4"
-                      type="video/mp4">
-            </video>
-            <!-- <p>
-              Maximizes the occupancy of action-state space by maximizing cumulative action entropy
-            </p>  -->
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section> 
-  <section id="videos_swimmer_fixed_component" class="section">
-    <div class="container ">
-      <h2 class="title is-3 has-text-centered">Swimmer-v5 Agent Dynamics Using A Fixed Component</h2>
-      <p>
-        This section evaluates the behavior of the Swimmer-v5 agent when consistently utilizing a single, fixed component policy \(\pi_k\) from the learned mixture policy.
-        By isolating and deploying one component at a time, we can observe the distinct behaviors and strategies that each component has specialized in during training.
-        This analysis provides insights into how different components contribute to the overall performance and adaptability of the agent in navigating its environment.
-      </p>
-      <br>
-      <br>
-      <div class="columns is-centered">
-
-        <div class="column">
-          <div class="content">
-            <h4 class="title is-4 has-text-centered"> \( a = \mu_k \) </h4>
-            <p style="text-align: justify;">
-              The agent consistently uses the mode (most probable action) of a selected component policy \(\pi_k\) at each time step, resulting in deterministic behavior.
-            </p>
-            <video id="video_swimmer_det" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/swimmer_std_0_0.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="column">
-          <h4 class="title is-4 has-text-centered">\( a \sim \pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\)</h4>
-          <div class="columns is-centered">
-            <div class="column content">
-              <p style="text-align: justify;">
-                The agent samples actions from the component policy \(\pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\), where the diagonal elements of the covariance matrix \(\Sigma_k(s)\) are limited from above by \(0.1\).
-              </p>
-              <video id="video_swimmer_stoc" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/Swimmer_std_0_1.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="videos_fetch_fixed_component" class="section">
-    <div class="container ">
-      <h2 class="title is-3 has-text-centered">FetchReach-v5 Agent Dynamics Using A Fixed Component</h2>
-      <p>
-        This section evaluates the behavior of the FetchReach-v5 agent when consistently utilizing a single, fixed component policy \(\pi_k\) from the learned mixture policy.
-        By isolating and deploying one component at a time, we can observe the distinct behaviors and strategies that each component has specialized in during training.
-        This analysis provides insights into how different components contribute to the overall performance and adaptability of the agent in navigating its environment.
-      </p>
-      <br>
-      <br>
-      <div class="columns is-centered">
-
-        <div class="column">
-          <div class="content">
-            <h4 class="title is-4 has-text-centered"> \( a = \mu_k \) </h4>
-            <p style="text-align: justify;">
-              The agent consistently uses the mode (most probable action) of a selected component policy \(\pi_k\) at each time step, resulting in deterministic behavior.
-            </p>
-            <video id="video_fetch_det" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/fetchreach_std_0_0.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="column">
-          <h4 class="title is-4 has-text-centered">\( a \sim \pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\)</h4>
-          <div class="columns is-centered">
-            <div class="column content">
-              <p style="text-align: justify;">
-                The agent samples actions from the component policy \(\pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\), where the diagonal elements of the covariance matrix \(\Sigma_k(s)\) are limited from above by \(0.1\).
-              </p>
-              <video id="video_fetch_stoc" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/fetchreach_std_0.1.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-<section id="videos_random" class="section">
+<!-- Videos 4 -->
+ <section id="videos_random" class="section">
   <div class="container ">
     <div class="content has-text-justified">
-      <h2 class="title is-3" style="text-align: justify;">Comparison between our method and using random set of actions</h2>
+      <h2 class="title is-3" style="text-align: justify;">Videos 4: Comparison between our method and using random set of actions</h2>
       <p>
       This section evaluates our method&#8217;s ability to control the complex dynamics of the MuJoCo Humanoid and Walker2d tasks, where randomly generated actions invariably fail. 
       <br> 
@@ -438,35 +398,11 @@
   </div>
 </section>
 
-
-<section id="videos_humanoid_mapping" class="section">
-  <div class="container ">
-    <div class="content has-text-centered">
-      <h2 class="title is-3">Mapping from State to Components</h2>
-    </div>
-    <div class="content is-centered">
-      <div class="columns is-centered">
-        <div class="column content is-centered">
-
-          <div style="max-width: 800px; margin: 0 auto;">
-            <p>
-              This section visualizes the state-to-component mapping learned by the mixture policy in the Humanoid-v5 environment. 
-              We can see how our mixture policy has high entropic mixing weights with the low entropic components specialized in different behaviors.
-            </p>
-            <br>
-          </div>
-          <video style="display: block; margin: 0 auto;" id="video_humanoid_agent" autoplay controls muted loop playsinline height="50%" width="50%">
-            <source src="./static/videos/Humanoid-v5-agent_praw_video_compressed.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div> 
-  </div>
-  
-  <section id="videos_ant_dads_metra_comparison" class="section">
+<!-- Videos 5 -->
+<section id="videos_ant_dads_metra_comparison" class="section">
     <div class="container ">
       <div class="content has-text-centered">
-        <h2 class="title is-3">Comparison: DADs, METRA, and Our Method (Ant-v5, Fixed Component)</h2>
+        <h2 class="title is-3">Videos 5: Comparison: DADs, METRA, and Our Method (Ant-v5, Fixed Component)</h2>
         <p>
           This section compares the behaviors discovered by the DADs and METRA skill discovery methods and our maxi-mix-mini-com approach in the Ant-v5 environment, using both top and side camera views.
           We are showing 16 components for our mixture against trained DADs and METRA models on 16-dimensional discrete latent skill variables.
@@ -528,6 +464,76 @@
       </div>
     </div>
   </section>
+<!-- Videos 6 -->
+<section id="videos_fetch_fixed_component" class="section">
+    <div class="container ">
+      <h2 class="title is-3 has-text-centered">Videos 6: FetchReach-v5 Agent Dynamics Using A Fixed Component</h2>
+      <p>
+        This section evaluates the behavior of the FetchReach-v5 agent when consistently utilizing a single, fixed component policy \(\pi_k\) from the learned mixture policy.
+        By isolating and deploying one component at a time, we can observe the distinct behaviors and strategies that each component has specialized in during training.
+        This analysis provides insights into how different components contribute to the overall performance and adaptability of the agent in navigating its environment.
+      </p>
+      <br>
+      <br>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <h4 class="title is-4 has-text-centered"> \( a = \mu_k \) </h4>
+            <p style="text-align: justify;">
+              The agent consistently uses the mode (most probable action) of a selected component policy \(\pi_k\) at each time step, resulting in deterministic behavior.
+            </p>
+            <video id="video_fetch_det" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/fetchreach_std_0_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <h4 class="title is-4 has-text-centered">\( a \sim \pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\)</h4>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p style="text-align: justify;">
+                The agent samples actions from the component policy \(\pi_k = \mathcal{N}(\mu_k(s), \Sigma_k(s))\), where the diagonal elements of the covariance matrix \(\Sigma_k(s)\) are limited from above by \(0.1\).
+              </p>
+              <video id="video_fetch_stoc" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/fetchreach_std_0.1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Videos 7 -->
+<section id="videos_humanoid_mapping" class="section">
+  <div class="container ">
+    <div class="content has-text-centered">
+      <h2 class="title is-3">Videos 7: Mapping from State to Components</h2>
+    </div>
+    <div class="content is-centered">
+      <div class="columns is-centered">
+        <div class="column content is-centered">
+
+          <div style="max-width: 800px; margin: 0 auto;">
+            <p>
+              This section visualizes the state-to-component mapping learned by the mixture policy in the Humanoid-v5 environment. 
+              We can see how our mixture policy has high entropic mixing weights with the low entropic components specialized in different behaviors.
+            </p>
+            <br>
+          </div>
+          <video style="display: block; margin: 0 auto;" id="video_humanoid_agent" autoplay controls muted loop playsinline height="50%" width="50%">
+            <source src="./static/videos/Humanoid-v5-agent_praw_video_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> 
+  </div>
+  
+  
   
   <!-- <section id="videos_ant_dads_metra_comparison" class="section">
     <div class="container ">
@@ -579,179 +585,6 @@
     </div>
   </section> -->
 </section>
-
-    
-
-<!-- <section class="section">
-  <div class="container ">
-    <h2 class="title is-3 has-text-centered">Mujoco Benchmark</h2>
-    
-    <div class="content has-text-centered"">
-      
-    <table>
-      <thead>
-          <tr>
-              <th>Metric/Method</th>
-              <th>SAC</th>
-              <th>PPO</th>
-              <th>TD3</th>
-              <th>DDPG</th>
-              <th>MOP reference</th>
-              <th>Lap reference</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>Ant-v4 500k</td>
-              <td>5754</td>
-              <td>1431</td>
-              <td>3857</td>
-              <td>-521</td>
-              <td><strong>6166</strong></td>
-              <td>6016</td>
-          </tr>
-          <tr>
-              <td>Ant-v4 1M</td>
-              <td>6427</td>
-              <td>1929</td>
-              <td>4378</td>
-              <td>413</td>
-              <td>6647</td>
-              <td><strong>6695</strong></td>
-          </tr>
-          <tr>
-              <td>Hum-v4 500k</td>
-              <td>4761</td>
-              <td>546</td>
-              <td>93</td>
-              <td>130</td>
-              <td>4972</td>
-              <td><strong>5294</strong></td>
-          </tr>
-          <tr>
-              <td>Hum-v4 1M</td>
-              <td>5316</td>
-              <td>661</td>
-              <td>93</td>
-              <td>127</td>
-              <td>5075</td>
-              <td><strong>5489</strong></td>
-          </tr>
-          <tr>
-              <td>Walker2d-v4 500k</td>
-              <td>3347</td>
-              <td>2781</td>
-              <td>3587</td>
-              <td>396</td>
-              <td>3656</td>
-              <td><strong>3919</strong></td>
-          </tr>
-          <tr>
-              <td>Walker2d-v4 1M</td>
-              <td>4297</td>
-              <td>3444</td>
-              <td>4172</td>
-              <td>1449</td>
-              <td>4173</td>
-              <td><strong>4558</strong></td>
-          </tr>
-          <tr>
-              <td>Hopper-v4 500k</td>
-              <td>2292</td>
-              <td>961</td>
-              <td><strong>3204</strong></td>
-              <td>1450</td>
-              <td>2209</td>
-              <td>1691</td>
-          </tr>
-          <tr>
-              <td>Hopper-v4 1M</td>
-              <td>2766</td>
-              <td>935</td>
-              <td><strong>3294</strong></td>
-              <td>1721</td>
-              <td>2784</td>
-              <td>2394</td>
-          </tr>
-          <tr>
-              <td>Cheetah-v4 500k</td>
-              <td>8048</td>
-              <td>4840</td>
-              <td>8777</td>
-              <td><strong>9968</strong></td>
-              <td>8348</td>
-              <td>9098</td>
-          </tr>
-          <tr>
-              <td>Cheetah-v4 1M</td>
-              <td>9378</td>
-              <td>5463</td>
-              <td>10304</td>
-              <td><strong>11607</strong></td>
-              <td>9702</td>
-              <td>10516</td>
-          </tr>
-          <tr>
-              <td>mean</td>
-              <td>5238</td>
-              <td>2299</td>
-              <td>4175</td>
-              <td>2674</td>
-              <td><strong>5373</strong></td>
-              <td><strong>5567</strong></td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-  </div>
-</section>  -->
-
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column">
-        <div class="content has-text-justified">
-          <h2 class="title is-3 has-text-centered">Conclusion</h2>
-        </div>
-          
-        <div class="content has-text-justified">
-          <p>
-            The findings from our experiments highlight that even state-of-the-art methods often struggle with directionless exploration or overcommitment to suboptimal policies. 
-            Our ORDRP approach addresses these challenges by providing a reference policy that evolves in response to the learning environment. 
-            This adaptive nature allows for more structured exploration, reducing the risk of inefficient learning trajectories. 
-          </p>
-
-          <p>
-            Our study explored a novel approach to RL by introducing an off-reward dynamic reference policy to guide the main policy through complex learning environments. 
-            This reference policy evolves alongside the target policy, allowing for more targeted exploration and reducing the inefficiencies of traditional exploration methods. 
-            Our approach demonstrates that incorporating an off-reward reference policy into RL improves convergence rates and enhances performance in various tasks. 
-            The off-reward functions that we used, based on MOP and graph Laplacian, demonstrated to be much more efficient in exploring, learning and optimizing target rewards in slightly more involved environments than the ones typically considered. 
-          </p>
-
-          <p>
-            The experiments conducted in this project, including the Escape Room scenario and MuJoCo Benchmark Evaluation, demonstrate the success of our method. 
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section> -->
 
 
 <style>
